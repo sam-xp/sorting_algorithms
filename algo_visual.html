@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+
+    @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+    .page {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+    h1 {    
+                font-family: "Poppins", sans-serif;
+                font-size: 35px;
+                color: rgb(198, 255, 255);
+
+                background-color: black;
+
+                position: absolute;
+                top: 0%;
+                left: 0%;
+                text-align-last: auto;
+                
+                padding-left: 500px;
+                padding-right: 441px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+           }
+
+    h2  {
+                font-family: "Poppins", sans-serif;
+                font-size: 30px;
+                color: rgb(42, 255, 237);
+
+                position: absolute;
+                top: 13%;
+                left: 2%;
+
+                text-align-last: center;
+                padding-top: 10px;
+                padding-bottom: 10px;
+    }
+    body{ 
+                background: #333333;
+
+    }
+    
+    .Bubble_Sorting-button {
+            background-color: #4df9ff;
+            border: none;
+            color: #202020;
+            padding: 15px 15px;
+            min-width: 200px;
+
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            
+            font-size: 18px;
+            font-weight: bold;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+            
+            position: absolute;
+            left: 15%;
+            bottom: 7%;
+
+            transition: linear 0.2s;
+        }
+
+    .Bubble_Sorting-button:hover{
+        
+        background-image: linear-gradient(to right, #09ff00,#28ffd0);
+
+        color: rgb(0, 0, 0);
+        font-weight: bold;
+        transform: scale(1.01);
+        box-shadow: 0 0px 20px rgb(0, 0, 0);
+    }
+
+    .Selection_Sorting-button {
+            background-color: #4df9ff;
+            border: none;
+            color: #202020;
+            padding: 15px 15px;
+            min-width: 200px;
+
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            
+            font-size: 18px;
+            font-weight: bold;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+
+            position: absolute;
+            left: 15%;
+            bottom: 7%;
+
+            transition: linear 0.2s;
+        }
+
+    .Selection_Sorting-button:hover{
+        background-image: linear-gradient(to right, #09ff00,#28ffd0);
+
+        color: rgb(0, 0, 0);
+        font-weight: bold;
+        transform: scale(1.02);
+        box-shadow: 0 0px 20px rgb(0, 0, 0);
+    }
+
+    .Insertion_Sorting-button {
+            background-color: #4df9ff;
+            border: none;
+            color: #202020;
+            padding: 15px 15px;
+            min-width: 200px;
+
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            
+            font-size: 18px;
+            font-weight: bold;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+
+            position: absolute;
+            left: 15%;
+            bottom: 7%;
+
+            transition: linear 0.2s;
+        }
+
+    .Insertion_Sorting-button:hover{
+        background-image: linear-gradient(to right, #09ff00,#28ffd0);
+
+        color: rgb(0, 0, 0);
+        font-weight: bold;
+        transform: scale(1.02);
+        box-shadow: 0 0px 20px rgb(0, 0, 0);
+    }
+
+    .Quick_Sorting-button {
+            background-color: #4df9ff;
+            border: none;
+            color: #202020;
+            padding: 15px 15px;
+            min-width: 200px;
+
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            
+            font-size: 18px;
+            font-weight: bold;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+
+            position: absolute;
+            left: 15%;
+            bottom: 7%;
+
+            transition: linear 0.2s;
+        }
+
+    .Quick_Sorting-button:hover{
+        background-image: linear-gradient(to right, #09ff00,#28ffd0);
+
+        color: rgb(0, 0, 0);
+        font-weight: bold;
+        transform: scale(1.02);
+        box-shadow: 0 0px 20px rgb(0, 0, 0);
+    }
+
+    #bubble-sort-visualization{
+
+        width: 300px;
+        height: 450px;
+        border-radius: 5px;
+
+        background: rgb(131,58,180);
+        background: linear-gradient(45deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+
+        position: absolute;
+        top: 30%;
+        left: 1.5%;
+        overflow: hidden;
+
+    }
+
+    #bubble-sort-visualization img {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        transform: translateY(0);
+        transition: transform 0.5s ease-in-out;
+    }
+
+    #bubble-sort-visualization:hover img{
+
+        transform: translateY(-97%);
+        background-size: cover;
+    }
+
+    #selection-sort-visualization{
+        
+        width: 300px;
+        height: 450px;
+        border-radius: 5px;
+        
+        background: rgb(131,58,180);
+        background: linear-gradient(45deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+
+        overflow: hidden;
+        position: absolute;
+        top: 30%;
+        left: 26.7%;
+    }
+
+    #selection-sort-visualization img {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        transform: translateY(0);
+        transition: transform 0.5s ease-in-out;
+    }
+
+    #selection-sort-visualization:hover img{
+
+        transform: translateY(-97%);
+        background-size: cover;
+    }
+
+    #Insertion-sort-visualization{
+
+        width: 300px;
+        height: 450px;
+        border-radius: 5px;
+        
+        background: rgb(131,58,180);
+        background: linear-gradient(45deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+
+        overflow: hidden;
+        position: absolute;
+        top: 30%;
+        left: 51.5%;
+    }
+
+    #Insertion-sort-visualization img {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        transform: translateY(0);
+        transition: transform 0.5s ease-in-out;
+    }
+
+    #Insertion-sort-visualization:hover img{
+
+        transform: translateY(-97%);
+        background-size: cover;
+    }
+
+    #quick-sort-visualization{
+
+        width: 300px;
+        height: 450px;
+        border-radius: 5px;
+        
+        background: rgb(131,58,180);
+        background: linear-gradient(45deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+
+        overflow: hidden;
+        position: absolute;
+        top: 30%;
+        left: 76%;
+    }
+
+    #quick-sort-visualization img {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        transform: translateY(0);
+        transition: transform 0.5s ease-in-out;
+    }
+
+    /*https://imgur.com/E2TdVm7*/
+    #quick-sort-visualization:hover img{
+
+        transform: translateY(-97%);
+        background-size: cover;
+    }
+
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <header>
+        <h1>Algorithm Visualizations</h1>
+        <div>
+        </div>
+    </header>
+    <nav>
+
+    </nav>
+    <main>
+            
+            <div id="Sorting_algorithms">
+            <h2>
+                Sorting Algorithms
+            </h2> 
+            </div>
+            
+            <div id="bubble-sort-visualization">
+                <img src="https://imgur.com/SW8J9M3.jpeg">
+                <button onclick="window.location.href='http://localhost:5173/bubble_sort_anim.html'" class="Bubble_Sorting-button"> Bubble Sort </button>
+            </div>
+
+            <div id="selection-sort-visualization">
+            <img src="https://imgur.com/XjnQo95.jpeg">
+                <button onclick="window.location.href='http://localhost:5173/selection_sort_anim.html'" class="Selection_Sorting-button"> Selection Sort </button>
+            </div>
+            
+            <div id="Insertion-sort-visualization">
+            <img src="https://imgur.com/zVSNrNf.jpeg">
+                <button onclick="window.location.href='http://localhost:5173/insertion_sort_anim.html'" class="Insertion_Sorting-button"> Insertion Sort</button>
+            </div>
+            
+            <div id="quick-sort-visualization">
+            <img src="https://imgur.com/aorBGmy.jpeg">
+                <button onclick="window.location.href='http://localhost:5173/quick_sort_anim.html'" class="Quick_Sorting-button"> Quick Sort</button>
+            </div>
+
+    </main>
+    
+</body>
+</html>
