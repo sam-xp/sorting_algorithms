@@ -1,0 +1,455 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+    
+        .page {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #page1 {
+            background-image: url('https://i.imgur.com/M50nhjw.png');
+            background-repeat: no-repeat; 
+            background-size: cover;
+        }
+
+        #page2 {
+            background-color: #182722;
+        }
+
+        #page3{
+            display: flex;
+        }
+
+        h1{
+            color: #2ffca6;
+            position: absolute;
+            font-family: "Poppins", sans-serif;
+
+            font-size: 30px;
+            top: 110%;
+            left: 10%;
+        }
+
+        #scrollToPage2 {
+            background-color: #2ffca6;
+            color: rgb(0, 0, 0);
+            padding: 10px 10px;
+            height: 60px;
+            width: 70px;
+
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            
+            font-size: 20px;
+            font-weight: bold;
+
+            position: absolute;
+            top: 45%;
+            left: 40%;
+        }
+
+        #scrollToPage2:hover {
+            background-color: #2ffca6; 
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        #generateBars{
+
+            background-color: #2ffca6; 
+            width: 200px; 
+            height: 50px; 
+            font-family: "Poppins", sans-serif;
+            margin-left: 30px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 17px;
+        }
+
+        #generateBars:hover{
+
+            transform: scale(1.02);
+        }
+
+        input[type="number"] {
+
+            width: 40px;
+            padding: 10px;
+            border: 1px solid transparent;
+            border-radius: 10px;
+            font-size: 15px;
+            color: #000000;
+        }
+
+        input[type="number"]:focus {
+            border-color: #ffffff;
+            box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+            background-color: #fff;
+        }
+
+        #chart {
+            display: flex;
+            align-items: flex-end;
+            height: 400px;
+        }
+
+        .bar-container .bar {
+            flex: 1;
+            margin-right: 10px;
+            background-color: #2ffca6;
+            position: relative;
+            max-height: 300px;
+            transition: ease 0.2;
+        }
+
+        .bar-container {
+            position: relative;
+            height: 400px;
+            width: 1100px;
+
+            border-width: 3px;
+            border-color: #3ff53f;
+            border-style: ridge;
+
+            margin-top: 10px;
+
+            padding-left: 10px;
+            padding-bottom: 5px;
+        }
+
+        .bar-input{
+            position: absolute;
+            bottom: 0%;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            border: 1px solid transparent;
+            border-radius: 5px;
+            background-color: transparent;
+
+            font-size: 15px;
+            font-weight: bold;
+
+            color: #000000;
+            outline: none;
+        }
+
+        .bar-input:focus {
+            border-color: #ccc;
+            box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+        }
+
+        #scrollToPage3 {
+
+            width: 270px;
+            height: 70px;
+
+            position: relative;
+            top: 40%;
+            left: 35%;
+
+            background: #3ff53f;
+            background: #6aeb8c;
+            background-image: -webkit-linear-gradient(top, #6aeb8c, #63dbff);
+            background-image: -moz-linear-gradient(top, #6aeb8c, #63dbff);
+            background-image: -ms-linear-gradient(top, #6aeb8c, #63dbff);
+            background-image: -o-linear-gradient(top, #6aeb8c, #63dbff);
+            background-image: linear-gradient(to bottom, #6aeb8c, #63dbff);
+            -webkit-border-radius: 10;
+            -moz-border-radius: 10;
+            border-radius: 10px;
+
+            font-size: 20px;
+            font-family: "Poppins", sans-serif;
+            font-weight: bold;
+                        
+            padding: 10px 20px 10px 20px;
+            text-decoration-style: bold;
+        }
+
+        #scrollToPage3:hover{
+
+            transform: scale(1.02);
+        }
+
+        .reset-button {
+
+            width: 250px;
+            height: 70px;
+
+            position: relative;
+            top: 40%;
+            left: -35%;
+
+            background: #eb6c90;
+            background-image: -webkit-linear-gradient(top, #eb6c90, #ffa763);
+            background-image: -moz-linear-gradient(top, #eb6c90, #ffa763);
+            background-image: -ms-linear-gradient(top, #eb6c90, #ffa763);
+            background-image: -o-linear-gradient(top, #eb6c90, #ffa763);
+            background-image: linear-gradient(to bottom, #eb6c90, #ffa763);
+            -webkit-border-radius: 10;
+            -moz-border-radius: 10;
+            border-radius: 10px;
+            font-family: "Poppins", sans-serif;
+            color: #000000;
+            
+            font-size: 20px;
+            font-weight: bold;
+
+            padding: 10px 20px 10px 20px;
+            text-decoration: none;
+            }
+
+        .reset-button:hover {
+
+            text-decoration: none;
+            transform: scale(1.02);
+        }
+
+        #bars_limit{
+
+            position: absolute;
+            bottom: -93%;
+            font-family: "Poppins", sans-serif;
+            font-weight: bold;
+            font-size: 30px;
+            color: #2ffca6;
+        }
+
+        @layer bg , main;
+
+        @layer main{
+        
+        #bubble_canvas{
+
+            width: 1000px;
+            height: 550px;
+
+            position: absolute;
+
+            top: 0.9%;
+            left: 0.45%;
+
+        }
+    }
+
+    @layer bg{
+
+        #border_canvas{
+
+        width: 1010px;
+        height: 560px;
+
+        background-color: #000000;
+        border-color: #3ff53f;
+
+        border-style: ridge;
+
+        position: absolute;
+
+        left: 2.5%;
+        bottom: -189%
+        
+        }
+    }
+
+        #bubble_canvas canvas{
+            
+            background-color: transparent;
+        }
+
+        #PlayPause_button{
+
+            transition: display 0.8s ease-in-out;
+            position: absolute;
+            background-image: url('https://i.imgur.com/0pmy3io.jpeg');
+            background-size: cover;
+            left: 50%;
+            bottom: -199%;
+            width: 50px;
+            height: 50px;
+            border-radius: 30px;
+            border-color: #2ffca6;
+        }
+
+        #PlayPause_button:hover{
+
+            border-color: #2ffce1;
+            background-size: cover;
+
+        }
+
+        #Home{
+
+            background-image: url('https://i.imgur.com/R86poO2.jpeg');
+            background-size: cover;
+            position: relative;
+            
+            right: -40%;
+            top: 35%;
+
+            width: 60px;
+            height: 60px;
+            border-radius: 40px;
+            border-color: #2ffca6;
+
+        }
+
+        #Home:hover{
+
+            border-color: #39ff74;
+            background-size: cover;
+            transform: scale(1.01);
+            box-shadow: 0px 0px 5px rgb(107, 255, 115);
+        }
+
+        #proc_card{
+
+        width: 240px;
+        height: 560px;
+
+        font-family: "Poppins", sans-serif;
+
+        background-color: #000000;
+
+        border-width: 3px;
+        border-style: ridge;
+        border-color: #3ff53f;
+
+        position: absolute;
+
+        right: 2.5%;
+        top: 205.6%;
+
+        }
+
+        #header_bg{
+
+        width: 230px;
+        height: 45px;
+
+        color: #40ff2f;
+        background-color: #1e1e4d;
+
+        text-align: center;
+        position: absolute;            
+        top: 5px;
+        left: 5px;
+
+        font-size: larger;
+        font-weight: bold;
+
+        padding-top: 12px;
+        }
+
+        #code_body{
+
+        width: 230px;
+        height: 483px;
+
+        background-color: #1e1e4d;
+        color: #3ff53f;
+
+        position: absolute;
+        top: 70px;
+        left: 5px;
+
+        }
+
+        #elem1_block{
+
+        width: 45px;
+        height: 27px;
+        padding-top: 3px;
+
+        border-radius: 5px;
+        color: #3ff53f;
+        background-color: transparent;
+
+        text-align: center;
+        position: absolute;
+        right: 28px;
+        bottom: 405px;
+        }
+
+        #elem1_index_block{
+
+        width: 45px;
+        height: 27px;
+        padding-top: 3px;
+
+        border-radius: 5px;
+        color: #3ff53f;
+        background-color: transparent;
+
+        text-align: center;
+        position: absolute;
+        right: 28px;
+        bottom: 380px;
+        }
+
+        #elem2_block{
+
+        width: 45px;
+        height: 27px;
+        padding-top: 3px;
+
+        border-radius: 5px;
+        color: #3ff53f;
+        background-color: transparent;
+
+        text-align: center;
+        position: absolute;
+        right: 10px;
+        bottom: 330px;
+        }
+
+        #elem2_index_block{
+
+        width: 45px;
+        height: 27px;
+        padding-top: 3px;
+
+        border-radius: 5px;
+        color: #3ff53f;
+        background-color: transparent;
+
+        text-align: center;
+        position: absolute;
+        right: 10px;
+        bottom: 305px;
+        }
+
+        #cmp1_index_block{
+
+        width: 45px;
+        height: 27px;
+        padding-top: 3px;
+
+        border-radius: 5px;
+        color: #3ff53f;
+        background-color: transparent;
+
+        text-align: center;
+        position: absolute;
+        right: 128px;
+        bottom: 56px;
+        }
+
+        #cmp2_index_block{
+
+        width: 45px;
+        height: 27px;
+        padding-top: 3px;
+
+        border-radius: 5px;
+        color: #3ff53f;
+        background-color: transparent;
+
+        text-align: center;
+        position: absolute;
+        right: 52px;
+        bottom: 56px;
+        }
